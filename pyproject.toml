@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rate-limit-regression"
+version = "0.1.0"
+description = "Local-only regression probe for rate-limit behavior in synthetic APIs"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Gustavo Avelino Saraiva Oliveira" }]
+dependencies = []
+
+[project.scripts]
+ratelimit-regression = "ratelimit_regression.probe:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
