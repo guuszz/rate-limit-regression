@@ -4,6 +4,10 @@ Pequeno teste de regressão para uma pergunta prática de AppSec: uma rota de at
 
 O cenário é inteiramente sintético, usa apenas `127.0.0.1` e não incorpora dados de aplicações ou relatórios privados. O problema que o projeto explora é a regressão de controles de tentativa após mudanças em fluxos sensíveis; o MVP oferece uma forma pequena e repetível de testar uma API de demonstração antes de depender de uma verificação manual.
 
+## Por que esse problema importa
+
+Limitar tentativas é uma prática reconhecida para reduzir ataques de adivinhação online: o NIST SP 800-63B-4 descreve controles de rate limiting/throttling para verificadores de autenticação, e a OWASP REST Assessment recomenda testar throttling em endpoints de autenticação, token e recuperação de conta ([NIST, seção 3.2.2](https://pages.nist.gov/800-63-4/sp800-63b.html#rate-limiting-throttling); [OWASP REST Assessment](https://cheatsheetseries.owasp.org/cheatsheets/REST_Assessment_Cheat_Sheet.html#rate-limiting-and-throttling-assessment)). Essas referências sustentam a relevância do controle; não demonstram demanda pelo formato deste protótipo. A utilidade operacional e os critérios de aceitação ainda precisam ser discutidos com profissionais que mantêm APIs.
+
 ## O que faz
 
 - Inicia uma API de demonstração em loopback, com implementação deliberadamente corrigida ou sem limitador para comparar resultados.
